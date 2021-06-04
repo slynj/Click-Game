@@ -27,6 +27,13 @@ float baseWidth;
 float baseHeight;
 float lineGap;
 String gameState;
+float firstCol_X;
+float secondCol_X;
+float thirdCol_X;
+ArrayList<Float> firstCol_Y = new ArrayList<Float>();
+ArrayList<Float> secondCol_Y = new ArrayList<Float>();
+ArrayList<Float> thirdCol_Y = new ArrayList<Float>();
+float rectY = 0;
 
 void setup() {
   size(1000, 700);
@@ -39,8 +46,26 @@ void setup() {
   lineGap = baseWidth/3;            //gap between the lines that divides the base in 3 parts
   gameState = "run";
   
-  firstCol_Y.add(100f);
-  firstCol_Y.add(200f);
+  firstCol_Y.add(rectY);
+  secondCol_Y.add(rectY - 50);
+  thirdCol_Y.add(rectY - 30);
+
+    //rectY += random(500);
+    
+  //}
+  //firstCol_Y.add(100f);
+  //firstCol_Y.add(200f);
+  //firstCol_Y.add(300f);
+  
+  //secondCol_Y.add(120f);
+  //secondCol_Y.add(220f);
+  //secondCol_Y.add(320f);
+  
+  //thirdCol_Y.add(120f);
+  //thirdCol_Y.add(220f);
+  //thirdCol_Y.add(320f);
+  
+  //secondCol_Y.remove(0);
 }
 
 
@@ -113,59 +138,80 @@ void drawZone() {
 
 
 int loop = 0;
-  float[] cordX = {130, 230, 330};
-  float[] cordY = {0, 0, 0};
+int[] sec = {120, 180, 240, 300, 360, 420};
+int index = 0;
+
+  //float[] cordX = {130, 230, 330};
+  //float[] cordY = {0, 0, 0};
   
-  float firstCol_X = 130f;
   
-  ArrayList<Float> firstCol_Y = new ArrayList<Float>();
+  
+  
    
-  boolean[] onX = {false, false, false};
+  //boolean[] onX = {false, false, false};
   
 void fallingRect() {
-    rect(firstCol_X, firstCol_Y.get(0), baseWidth/30, baseHeight/50);
+  loop++;
   
-   //  for (int i = 0; i < cordX.length; i++) {
-   //    if (onX[i] == true) {
-   //      rect(cordX[i], cordY[i], baseWidth/30, baseHeight/50);
-   //      cordY[i]++;
-         
-   //      ArrayList<Integer> ar = new ArrayList<Integer>();
-   //      ar.add(10);
-        
-   //      if (cordY[i] >= 500) {
-   //         cordY[i] = 0;
-   //         onX[i] = false;
-   //      } 
-   //    } else {
-   //      if (++loop % 180 == 0) {
-   //       int index = int(random(cordX.length));
-   //       if (onX[index] == true) {
-   //         continue;
-   //       }
-   //       cordY[index] = 0;
-   //       rect(cordX[index], cordY[index], baseWidth/30, baseHeight/50);
-   //       onX[index] = true;
-   //       cordY[index]++;
-          
-   //       if (cordY[index] >= 500) {
-   //           cordY[index] = 0;
-   //        }
-   //        loop = 0;
-   //      }
-   //    }   
-       
-   //    //delay(100);
-   // }
+  firstCol_X = baseX;
+  secondCol_X = firstCol_X + lineGap;
+  thirdCol_X = secondCol_X + lineGap;
+  
+  for (int i = 0; i < firstCol_Y.size(); i ++) {
+    rect(firstCol_X, firstCol_Y.get(i), lineGap, baseHeight/30);
+    firstCol_Y.set(i, firstCol_Y.get(i) + 1);
     
-   
-   ////for (int i = 0; i < cordX.length; i++) {
-   ////   rect(cordX[i], cordY[i], baseWidth/30, baseHeight/50);
-   ////   cordY[i]++;
-      
-   ////   if (cordY[i] >= 500) {
-   ////     cordY[i] = 0;
-   ////   }
-   ////}
+    if (firstCol_Y.get(i) > baseHeight*0.9 + baseHeight/20) {
+       firstCol_Y.remove(i);
+    }
+  }
   
+    for (int i = 0; i < secondCol_Y.size(); i ++) {
+    rect(secondCol_X, secondCol_Y.get(i), lineGap, baseHeight/30);
+    secondCol_Y.set(i, secondCol_Y.get(i) + 1);
+    
+    if (secondCol_Y.get(i) > baseHeight*0.9 + baseHeight/20) {
+       secondCol_Y.remove(i);
+    }
+  }
+  
+  for (int i = 0; i < thirdCol_Y.size(); i ++) {
+    rect(thirdCol_X, thirdCol_Y.get(i), lineGap, baseHeight/30);
+    thirdCol_Y.set(i, thirdCol_Y.get(i) + 1);
+    
+    if (thirdCol_Y.get(i) > baseHeight*0.9 + baseHeight/20) {
+       thirdCol_Y.remove(i);
+    }
+  }
+  
+  firstColRan();
+  secondColRan();
+  thirdColRan();
+    
+  
+  
+}
+
+void firstColRan() {
+    index
+    if (loop % sec[index] == 0) {
+    firstCol_Y.add(rectY);
+    index = int(random(sec.length));    
+  }
+}
+
+void secondColRan() {
+
+if (loop % sec[index] == 0) {
+    secondCol_Y.add(rectY);
+    index = int(random(sec.length));    
+  }
+}
+void thirdColRan() {
+
+  if (loop % sec[index] == 0) {
+    thirdCol_Y.add(rectY);
+    index = int(random(sec.length));    
+  }
+
 }
