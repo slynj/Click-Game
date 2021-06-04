@@ -34,6 +34,7 @@ ArrayList<Float> firstCol_Y = new ArrayList<Float>();
 ArrayList<Float> secondCol_Y = new ArrayList<Float>();
 ArrayList<Float> thirdCol_Y = new ArrayList<Float>();
 float rectY = 0;
+int speed = 1;
 
 void setup() {
   size(1000, 700);
@@ -74,6 +75,7 @@ void draw() {
     drawBase();
     drawButton();
     drawZone();
+    speedControl();
     fallingRect();
   }
 }
@@ -138,17 +140,8 @@ void drawZone() {
 
 
 int loop = 0;
-int[] sec = {120, 180, 240, 300, 360, 420};
+int[] sec = {30, 60, 90};
 int index = 0;
-
-  //float[] cordX = {130, 230, 330};
-  //float[] cordY = {0, 0, 0};
-  
-  
-  
-  
-   
-  //boolean[] onX = {false, false, false};
   
 void fallingRect() {
   loop++;
@@ -159,7 +152,7 @@ void fallingRect() {
   
   for (int i = 0; i < firstCol_Y.size(); i ++) {
     rect(firstCol_X, firstCol_Y.get(i), lineGap, baseHeight/30);
-    firstCol_Y.set(i, firstCol_Y.get(i) + 1);
+    firstCol_Y.set(i, firstCol_Y.get(i) + speed);
     
     if (firstCol_Y.get(i) > baseHeight*0.9 + baseHeight/20) {
        firstCol_Y.remove(i);
@@ -168,7 +161,7 @@ void fallingRect() {
   
     for (int i = 0; i < secondCol_Y.size(); i ++) {
     rect(secondCol_X, secondCol_Y.get(i), lineGap, baseHeight/30);
-    secondCol_Y.set(i, secondCol_Y.get(i) + 1);
+    secondCol_Y.set(i, secondCol_Y.get(i) + speed);
     
     if (secondCol_Y.get(i) > baseHeight*0.9 + baseHeight/20) {
        secondCol_Y.remove(i);
@@ -177,41 +170,37 @@ void fallingRect() {
   
   for (int i = 0; i < thirdCol_Y.size(); i ++) {
     rect(thirdCol_X, thirdCol_Y.get(i), lineGap, baseHeight/30);
-    thirdCol_Y.set(i, thirdCol_Y.get(i) + 1);
+    thirdCol_Y.set(i, thirdCol_Y.get(i) + speed);
     
     if (thirdCol_Y.get(i) > baseHeight*0.9 + baseHeight/20) {
        thirdCol_Y.remove(i);
     }
   }
   
-  firstColRan();
-  secondColRan();
-  thirdColRan();
-    
   
-  
-}
-
-void firstColRan() {
-    index
-    if (loop % sec[index] == 0) {
-    firstCol_Y.add(rectY);
-    index = int(random(sec.length));    
-  }
-}
-
-void secondColRan() {
-
-if (loop % sec[index] == 0) {
-    secondCol_Y.add(rectY);
-    index = int(random(sec.length));    
-  }
-}
-void thirdColRan() {
-
+  int column = 0;
   if (loop % sec[index] == 0) {
-    thirdCol_Y.add(rectY);
-    index = int(random(sec.length));    
+    column = int(random(3));
+    switch (column) {
+      case 0:
+        firstCol_Y.add(rectY);
+        break;
+      case 1:
+        secondCol_Y.add(rectY);
+        break;
+      case 2:
+        thirdCol_Y.add(rectY);
+        break;
+       default:
+    }
+    
+    index = int(random(sec.length));
   }
+}
 
+
+void speedControl() {
+  if (loop % 600 == 0) {
+    speed++;
+  }
 }
