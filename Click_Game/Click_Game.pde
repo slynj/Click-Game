@@ -27,18 +27,24 @@ void setup() {
 }
 
 
+
+
 void draw() {
-  drawBackground();
+  drawBase();
+  //drawButton();
+  //drawZone();
 }
 
-void drawBackground() {
+
+
+void drawBase() {
   //variable declaration
-  float baseX = width/8;
-  float baseY = 0;
-  float baseWidth = width/2 - width/8;
-  float baseHeight = height*0.75;
-  float lineGap = baseWidth/3;
-  
+float baseX = width/8;                  //x coordinate is always 1/8 of the width
+float baseY = 0;                        //y is always0 zero since the rectangle is touching the top
+float baseWidth = width/2 - width/8;    //width of the base rect is half of width minus width/8 (gap on the left)
+float baseHeight = height*0.75;         //height of the base rect is always 75% of the height 
+float lineGap = baseWidth/3;            //gap between the lines that divides the base in 3 parts
+
   //draws the base rectangle
   fill(50);
   stroke(0);
@@ -47,15 +53,29 @@ void drawBackground() {
   for (float lineX = baseX + lineGap; lineX < width/2; lineX += lineGap) {
     line(lineX, 0, lineX, baseHeight);
   }
-  
-  //draws 3 buttons on the bottom
-  fill(255);
-  noStroke();
-  for (float buttonX = baseX; buttonX < width/2; buttonX += lineGap +2) {
-    rect(buttonX, baseHeight+10, lineGap-4, lineGap-4, 20);
-  }
-  
-  //draws the yellow 'zone'
-  fill(250, 219, 63, 191);
-  rect(baseX, baseHeight*0.9, baseWidth, baseHeight/20); 
+  println(width);
+  println(height);
+
+  println(baseX);
+  println(baseY);
+  println(baseWidth);
+  println(baseHeight);
+  println(lineGap);
+
 }
+
+
+//void drawButton() {
+//  //draws 3 buttons on the bottom
+//  fill(255);
+//  noStroke();
+//  for (float buttonX = baseX; buttonX < width/2; buttonX += lineGap +2) {
+//    rect(buttonX, baseHeight+10, lineGap-4, lineGap-4, 20);
+//  }
+//}
+
+////draws the yellow 'zone' at the botton
+//void drawZone() {
+//  fill(250, 219, 63, 191);    //yellow colour opacity 75%
+//  rect(baseX, baseHeight*0.9, baseWidth, baseHeight/20);
+//}
