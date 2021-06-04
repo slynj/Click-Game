@@ -38,6 +38,9 @@ void setup() {
   baseHeight = height*0.75;         //height of the base rect is always 75% of the height 
   lineGap = baseWidth/3;            //gap between the lines that divides the base in 3 parts
   gameState = "run";
+  
+  firstCol_Y.add(100f);
+  firstCol_Y.add(200f);
 }
 
 
@@ -46,6 +49,7 @@ void draw() {
     drawBase();
     drawButton();
     drawZone();
+    fallingRect();
   }
 }
 
@@ -72,12 +76,12 @@ void drawButton() {
   //preset for the button
   fill(255);  //button colour white
   noStroke();  //without strokes
-  
+
   //draws the 3 buttons
   rect(buttonLX, buttonY, buttonSide, buttonSide, 20);
   rect(buttonCX, buttonY, buttonSide, buttonSide, 20);
   rect(buttonRX, buttonY, buttonSide, buttonSide, 20);
-  
+
   //hover toggle (colour)
   if (mouseY >= buttonY && mouseY <= buttonY + buttonSide) {          //when mouse is within the "y" value buttons are placed in
     if (mouseX >= buttonLX && mouseX <= buttonLX + buttonSide) {      //if mouse X is in left button
@@ -108,6 +112,60 @@ void drawZone() {
 }
 
 
+int loop = 0;
+  float[] cordX = {130, 230, 330};
+  float[] cordY = {0, 0, 0};
+  
+  float firstCol_X = 130f;
+  
+  ArrayList<Float> firstCol_Y = new ArrayList<Float>();
+   
+  boolean[] onX = {false, false, false};
+  
 void fallingRect() {
+    rect(firstCol_X, firstCol_Y.get(0), baseWidth/30, baseHeight/50);
+  
+   //  for (int i = 0; i < cordX.length; i++) {
+   //    if (onX[i] == true) {
+   //      rect(cordX[i], cordY[i], baseWidth/30, baseHeight/50);
+   //      cordY[i]++;
+         
+   //      ArrayList<Integer> ar = new ArrayList<Integer>();
+   //      ar.add(10);
+        
+   //      if (cordY[i] >= 500) {
+   //         cordY[i] = 0;
+   //         onX[i] = false;
+   //      } 
+   //    } else {
+   //      if (++loop % 180 == 0) {
+   //       int index = int(random(cordX.length));
+   //       if (onX[index] == true) {
+   //         continue;
+   //       }
+   //       cordY[index] = 0;
+   //       rect(cordX[index], cordY[index], baseWidth/30, baseHeight/50);
+   //       onX[index] = true;
+   //       cordY[index]++;
+          
+   //       if (cordY[index] >= 500) {
+   //           cordY[index] = 0;
+   //        }
+   //        loop = 0;
+   //      }
+   //    }   
+       
+   //    //delay(100);
+   // }
+    
+   
+   ////for (int i = 0; i < cordX.length; i++) {
+   ////   rect(cordX[i], cordY[i], baseWidth/30, baseHeight/50);
+   ////   cordY[i]++;
+      
+   ////   if (cordY[i] >= 500) {
+   ////     cordY[i] = 0;
+   ////   }
+   ////}
   
 }
