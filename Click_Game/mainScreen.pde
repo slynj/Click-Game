@@ -28,4 +28,14 @@ void playButton() {
 
 //draws the playbutton (+functions)
 void helpButton() {
+  //variable declaration
+  float helpButtonX = width/2;
+  float helpButtonY = height*0.66;
+  float helpButtonWidth = width*0.23;;
+  float helpButtonHeight = height/8;
+  
+  fill(250, 219, 63, 191);   //yellow
+  noStroke();                //no stroke
+  rect(helpButtonX, helpButtonY, helpButtonWidth, helpButtonHeight, 20);  //draws the button
+  
 }
