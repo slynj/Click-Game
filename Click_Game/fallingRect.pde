@@ -27,39 +27,58 @@ void fallingRect() {
     rect(firstCol_X, firstCol_Y.get(i), lineGap, baseHeight/30);  //draws the rectangle of first column's element
     firstCol_Y.set(i, firstCol_Y.get(i) + speed);  //y of the rect is now original y + speed (related function is written at the bottom)
   }
-  
+
   //if there is a rectangle in the column
   if (firstCol_Y.size() > 0) {
-    
+
     //if the y of the rect is bigger than the yellow zone, delete the rectangle and print miss
     if (firstCol_Y.get(0) > baseHeight*0.9 + baseHeight/20) {    
       firstCol_Y.remove(0);
-      println("miss");
+      println("1st: miss");
     }
   }
-  
+
   //if there is a rectangle in the column (written again to prevent this part of the code running after the firstCol_Y is deleted)
   if (firstCol_Y.size() > 0) {
-    
+
     //if the y of the rectangle is bigger that the y of the yellow zone and smaller than y + height of the yellow zone (1 is added to increase the part being detected)
     if (firstCol_Y.get(0) >= baseHeight*0.9 - 1 && firstCol_Y.get(0) <= baseHeight*0.9 + baseHeight/20 + 1) {  
-      
+
       //if button is 1 (= if mouse is clicked inside the LEFT button)
       if (button == 1) {
-        println("success");      //show "SUCCESS"
+        println("1st: success");      //show "SUCCESS"
         firstCol_Y.remove(0);    //delete the rectangle
       }
     }
   }
 
-
   //for loop that draws the rectangle and moves it down by "speed" for the 2nd column
   for (int i = 0; i < secondCol_Y.size(); i ++) {
     rect(secondCol_X, secondCol_Y.get(i), lineGap, baseHeight/30);
     secondCol_Y.set(i, secondCol_Y.get(i) + speed);
+  }
 
-    if (secondCol_Y.get(i) > baseHeight*0.9 + baseHeight/20) {
-      secondCol_Y.remove(i);
+  //if there is a rectangle in the column
+  if (secondCol_Y.size() > 0) {
+
+    //if the y of the rect is bigger than the yellow zone, delete the rectangle and print miss
+    if (secondCol_Y.get(0) > baseHeight*0.9 + baseHeight/20) {    
+      secondCol_Y.remove(0);
+      println("2nd: miss");
+    }
+  }
+
+  //if there is a rectangle in the column (written again to prevent this part of the code running after the firstCol_Y is deleted)
+  if (secondCol_Y.size() > 0) {
+
+    //if the y of the rectangle is bigger that the y of the yellow zone and smaller than y + height of the yellow zone (1 is added to increase the part being detected)
+    if (secondCol_Y.get(0) >= baseHeight*0.9 - 1 && secondCol_Y.get(0) <= baseHeight*0.9 + baseHeight/20 + 1) {  
+
+      //if button is 2 (= if mouse is clicked inside the CENTRE button)
+      if (button == 2) {
+        println("2nd: success");      //show "SUCCESS"
+        secondCol_Y.remove(0);    //delete the rectangle
+      }
     }
   }
 
@@ -72,6 +91,8 @@ void fallingRect() {
       thirdCol_Y.remove(i);
     }
   }
+
+
 
   //generates random column and second
   if (loop % sec[index] == 0) {      //if the #in the loop variable is divisable by sec[index](30 for the first loop because index is 0);
