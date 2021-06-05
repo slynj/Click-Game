@@ -7,7 +7,7 @@ void drawLife() {
   
   //draw "life" number of hart images
   for (int i = 0; i < playerLife; i++) {
-    println(playerLife);
+    //println(playerLife);
     playerLife = life;   //updated value of playerLife
     tint(0);    //changes the hart to black(the image was originally red & white)  
     image(photo, hartX, 0, width/32, width/32);    //draw the image

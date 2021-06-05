@@ -8,6 +8,7 @@ void gameScreen() {
   drawButton();
   drawZone();
   drawLife();
+  timer();
   speedControl();
   fallingRect();
   successOrMiss();

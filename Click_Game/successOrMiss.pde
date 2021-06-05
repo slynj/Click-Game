@@ -28,17 +28,19 @@ void miss() {
 void successOrMiss() {
   textSize(100);
   count++;    //this increases the count by 1 (because the funciton is in the draw loop, it is equal to the frame rate)
-  
+
   //if the player suceeds,
   if (success == true && count < 60) {
     //for 1 seconds, draw text (after 1 sec it is gone because of the drawRect())
     fill(140, 188, 120);
+    textAlign(LEFT);
     text("SUCCESS", width*0.55, height/2);
   }
   //if the player misses,
   if (miss == true && count < 60) {
     //for 1 seconds, draw text  (after 1 sec it is gone because of the drawRect())
     fill(211, 94, 90);
+      textAlign(LEFT);
     text("MISS", width*0.65, height/2);
   }
 }

@@ -45,6 +45,12 @@ void draw() {
   if (gameState == "game") {
     gameScreen();
   }
+  if (gameState == "help") {
+    //gameScreen();
+  }
+  if (gameState == "end") {
+    //gameScreen();
+  }
 }
 
 void mousePressed() {
