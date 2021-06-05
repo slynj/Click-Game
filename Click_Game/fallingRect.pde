@@ -86,15 +86,33 @@ void fallingRect() {
   for (int i = 0; i < thirdCol_Y.size(); i ++) {
     rect(thirdCol_X, thirdCol_Y.get(i), lineGap, baseHeight/30);
     thirdCol_Y.set(i, thirdCol_Y.get(i) + speed);
+  }
+  
+  //if there is a rectangle in the column
+  if (thirdCol_Y.size() > 0) {
 
-    if (thirdCol_Y.get(i) > baseHeight*0.9 + baseHeight/20) {
-      thirdCol_Y.remove(i);
+    //if the y of the rect is bigger than the yellow zone, delete the rectangle and print miss
+    if (thirdCol_Y.get(0) > baseHeight*0.9 + baseHeight/20) {    
+      thirdCol_Y.remove(0);
+      println("3rd: miss");
     }
   }
 
+  //if there is a rectangle in the column (written again to prevent this part of the code running after the firstCol_Y is deleted)
+  if (thirdCol_Y.size() > 0) {
 
+    //if the y of the rectangle is bigger that the y of the yellow zone and smaller than y + height of the yellow zone (1 is added to increase the part being detected)
+    if (thirdCol_Y.get(0) >= baseHeight*0.9 - 1 && thirdCol_Y.get(0) <= baseHeight*0.9 + baseHeight/20 + 1) {  
 
-  //generates random column and second
+      //if button is 3 (= if mouse is clicked inside the RIGHT button)
+      if (button == 3) {
+        println("3rd: success");      //show "SUCCESS"
+        thirdCol_Y.remove(0);    //delete the rectangle
+      }
+    }
+  }
+
+  //generates random column and second for the rectangle to appear and fall
   if (loop % sec[index] == 0) {      //if the #in the loop variable is divisable by sec[index](30 for the first loop because index is 0);
     column = int(random(3));         //choses random num 0-2
     switch (column) {
