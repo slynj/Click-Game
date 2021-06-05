@@ -20,6 +20,7 @@
 //*/
 
 String gameState;       //game state (game, main, help, end)
+boolean click = false;
 
 
 
@@ -45,7 +46,16 @@ void draw() {
     drawZone();
     speedControl();
     fallingRect();
+    //speedTimer();
   }
+}
+
+void mousePressed() {
+  click = true;
+}
+
+void mouseReleased() {
+  click = false;
 }
 
 

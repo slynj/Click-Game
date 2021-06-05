@@ -1,5 +1,6 @@
 //variable declaration
 float lineGap;          //the gap between the lines that divides the base rect (= width of a column)
+int button = 0;
 
 //draws 3 buttons on the bottom
 void drawButton() {
@@ -24,6 +25,9 @@ void drawButton() {
     if (mouseX >= buttonLX && mouseX <= buttonLX + buttonSide) {      //if mouse X is in left button
       fill(255, 0, 0);                                                //change colour to red
       rect(buttonLX, buttonY, buttonSide, buttonSide, 20);            //over draw the button (rect)
+      if (click == true) {
+        button = 1;
+      } else {button = 0;}
     }
     if (mouseX >= buttonCX && mouseX <= buttonCX + buttonSide) {     //centre button
       fill(0, 255, 0);                                               //green

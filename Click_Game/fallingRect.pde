@@ -7,7 +7,6 @@ ArrayList<Float> firstCol_Y = new ArrayList<Float>();    //
 ArrayList<Float> secondCol_Y = new ArrayList<Float>();   //
 ArrayList<Float> thirdCol_Y = new ArrayList<Float>();    //
 
-//float rectY = 0;  
 int loop = 0;              //loop variable that increases by 1 every time the draw loop is runned
 int[] sec = {30, 60, 90};  //seconds array to have random seconds apart each rectangle
 int index = 0;             //index variable to index the sec array
@@ -31,6 +30,25 @@ void fallingRect() {
     if (firstCol_Y.get(i) > baseHeight*0.9 + baseHeight/20) {    //if the y of the rect is bigger than the yellow zone, delete the rectangle
       firstCol_Y.remove(i);
     }
+    
+    if (firstCol_Y.get(i) >= baseHeight*0.9 - 1 && firstCol_Y.get(i) <= baseHeight*0.9 + baseHeight/20 + 1) {  
+      if (button == 1) {
+        //text("success", width/2, height/2);
+        println("success");
+        firstCol_Y.remove(i);
+      } else {
+        //text("miss", width/2, height/2);
+        println("miss");
+        firstCol_Y.remove(i);
+      }
+    } 
+    
+    //switch(button){
+      
+    //}
+    //if (firstCol_Y.get(i) > baseHeight - baseHeight/30){
+    //  firstCol_Y.remove(i);
+    //}
   }
 
   //for loop that draws the rectangle and moves it down by "speed" for the 2nd column
