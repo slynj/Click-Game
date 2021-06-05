@@ -45,6 +45,7 @@ void draw() {
     drawBase();
     drawButton();
     drawZone();
+    drawLife();
     speedControl();
     fallingRect();
     successOrMiss();

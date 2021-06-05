@@ -31,12 +31,12 @@ void successOrMiss() {
   if (success == true && count < 60) {
     //for 1 seconds, draw text (after 1 sec it is gone because of the drawRect())
     fill(140, 188, 120);
-    text("SUCCESS", width*0.6, height/2);
+    text("SUCCESS", width*0.55, height/2);
   }
   //if the player misses,
   if (miss == true && count < 60) {
     //for 1 seconds, draw text  (after 1 sec it is gone because of the drawRect())
     fill(211, 94, 90);
-    text("MISS", width*0.6, height/2);
+    text("MISS", width*0.65, height/2);
   }
 }
