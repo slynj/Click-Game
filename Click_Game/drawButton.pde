@@ -25,17 +25,23 @@ void drawButton() {
     if (mouseX >= buttonLX && mouseX <= buttonLX + buttonSide) {      //if mouse X is in left button
       fill(255, 0, 0);                                                //change colour to red
       rect(buttonLX, buttonY, buttonSide, buttonSide, 20);            //over draw the button (rect)
-      if (click == true) {
-        button = 1;
+      if (click == true) {        //if mouse pressed;
+        button = 1;               //button is 1 (used to connect collision detection with the button click)
       } else {button = 0;}
     }
     if (mouseX >= buttonCX && mouseX <= buttonCX + buttonSide) {     //centre button
       fill(0, 255, 0);                                               //green
       rect(buttonCX, buttonY, buttonSide, buttonSide, 20);
+      if (click == true) {
+        button = 2;               //2
+      } else {button = 0;}
     }
     if (mouseX >= buttonRX && mouseX <= buttonRX + buttonSide) {     //right button
       fill(0, 0, 255);                                               //blue
       rect(buttonRX, buttonY, buttonSide, buttonSide, 20);
+      if (click == true) {
+        button = 3;              //3
+      } else {button = 0;}
     }
   }
 }
