@@ -6,5 +6,4 @@ void drawScore() {
   textSize(80);
   fill(0);
   text ("score: " + score, width*0.75, height*0.9);
-  //text ("score: " + score, width*0.55, height*0.9);
 }

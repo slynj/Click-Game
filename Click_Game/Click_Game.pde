@@ -33,7 +33,7 @@ void setup() {
   baseWidth = width/2 - width/8;     //width of the base rect is half of width minus width/8 (gap on the left)
   baseHeight = height*0.75;          //height of the base rect is always 75% of the height 
   lineGap = baseWidth/3;             //gap between the lines that divides the base in 3 parts
-  gameState = "main";                //initial game state
+  gameState = "end";                //initial game state
   photo = loadImage("hart.png");
 }
 
@@ -49,7 +49,7 @@ void draw() {
     //gameScreen();
   }
   if (gameState == "end") {
-    //gameScreen();
+    endScreen();
   }
 }
 

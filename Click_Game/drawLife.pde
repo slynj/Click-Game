@@ -13,4 +13,9 @@ void drawLife() {
     image(photo, hartX, 0, width/32, width/32);    //draw the image
     hartX -= width/32;        //move the image to the left
   }
+  
+  //if player dies (= 0 life)
+  if (life == 0) {
+    gameState = "end";
+  }
 }
