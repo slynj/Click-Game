@@ -24,12 +24,12 @@ void playButton() {
   float playButtonY = height*0.66;
   float playButtonWidth = width*0.23;
   float playButtonHeight = height/8;
-  
+
   //text of the button
   fill(255, 191);   //beige
   textSize(50);
   text ("P L A Y", playButtonX*1.13, playButtonY*1.13);
-  
+
   //rect part of the button
   fill(250, 219, 63, 191);   //yellow
   noStroke();                //no stroke
@@ -40,7 +40,7 @@ void playButton() {
     //button when hovered
     fill(255, 191);   //beige
     rect(playButtonX, playButtonY, playButtonWidth, playButtonHeight, 20);  //draws the button
-    
+
     //text when hovered
     fill(250, 219, 63, 191);   //yellow
     text ("P L A Y", playButtonX*1.13, playButtonY*1.13);
@@ -60,13 +60,28 @@ void helpButton() {
   float helpButtonWidth = width*0.23;
   float helpButtonHeight = height/8;
 
+  //text of the button
+  fill(255, 191);   //beige
+  textSize(50);
+  text ("H E L P", helpButtonX*1.07, helpButtonY*1.13);
+
   fill(250, 219, 63, 191);   //yellow
   noStroke();                //no stroke
   rect(helpButtonX, helpButtonY, helpButtonWidth, helpButtonHeight, 20);  //draws the button
 
   //collision detection; if the mouse is on the button
   if (mouseX > helpButtonX && mouseX < helpButtonX + helpButtonWidth && mouseY > helpButtonY && mouseY < helpButtonY + helpButtonHeight) {
+    //button when hovered
     fill(255, 191);   //beige
     rect(helpButtonX, helpButtonY, helpButtonWidth, helpButtonHeight, 20);  //redraws the button
+
+    //text when hovered
+    fill(250, 219, 63, 191);   //yellow
+    text ("H E L P", helpButtonX*1.07, helpButtonY*1.13);
+    
+    //while hovering, if the mouse is clicked,
+    if (click == true) {
+      gameState = "help";
+    }
   }
 }
