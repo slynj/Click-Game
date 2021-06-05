@@ -4,11 +4,11 @@ float lineGap;          //the gap between the lines that divides the base rect (
 //draws 3 buttons on the bottom
 void drawButton() {
   //variable declaration
-  float buttonSide = lineGap - 4;            //the button side length  is equal to line gap - 4 to give space inbetween the buttons
-  float buttonLX = baseX;                   //x coordinate of the button is equal to the x of base rect
-  float buttonCX = buttonLX + buttonSide + 6;
-  float buttonRX = buttonCX + buttonSide + 6;
-  float buttonY = baseHeight + width/100;  //y coordinate of the button is base height + 10 (=width/100) 
+  float buttonSide = lineGap - 4;              //the button side length  is equal to line gap - 4 to give space inbetween the buttons
+  float buttonLX = baseX;                      //x coordinate of the left button is equal to the x of base rect
+  float buttonCX = buttonLX + buttonSide + 6;  //x coordiante of the centre button is x of left button increased by the length of the button
+  float buttonRX = buttonCX + buttonSide + 6;  // ^
+  float buttonY = baseHeight + width/100;      //y coordinate of the button is base height + 10 (=width/100) 
 
   //preset for the button
   fill(255);  //button colour white
