@@ -41,11 +41,13 @@ void setup() {
 
 void draw() {
   if (gameState == "run") {
+    drawRect();
     drawBase();
     drawButton();
     drawZone();
     speedControl();
     fallingRect();
+    successOrMiss();
     //speedTimer();
   }
 }

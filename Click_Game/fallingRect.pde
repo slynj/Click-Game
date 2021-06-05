@@ -3,9 +3,10 @@ float firstCol_X;       //x of the rect in 1st column
 float secondCol_X;      //^ 2nd column
 float thirdCol_X;       //^ 3rd column
 
-ArrayList<Float> firstCol_Y = new ArrayList<Float>();    //
-ArrayList<Float> secondCol_Y = new ArrayList<Float>();   //
-ArrayList<Float> thirdCol_Y = new ArrayList<Float>();    //
+//ArrayList is used to have dynamic and changing arrays making it easier to add and delete the items held by it
+ArrayList<Float> firstCol_Y = new ArrayList<Float>();    //array list that holds the y value of the rectangles in the 1st column
+ArrayList<Float> secondCol_Y = new ArrayList<Float>();   //array list that holds the y value of the rectangles in the 2nd column
+ArrayList<Float> thirdCol_Y = new ArrayList<Float>();    //array list that holds the y value of the rectangles in the 3rd column
 
 int loop = 0;              //loop variable that increases by 1 every time the draw loop is runned
 int[] sec = {30, 60, 90};  //seconds array to have random seconds apart each rectangle
@@ -24,6 +25,7 @@ void fallingRect() {
 
   //for loop that draws the rectangle and moves it down by "speed" for the 1st column
   for (int i = 0; i < firstCol_Y.size(); i ++) {    //repeats it by the size of the firstCol_Y
+    fill(203, 97, 97, 191);    //red with 75% transparency
     rect(firstCol_X, firstCol_Y.get(i), lineGap, baseHeight/30);  //draws the rectangle of first column's element
     firstCol_Y.set(i, firstCol_Y.get(i) + speed);  //y of the rect is now original y + speed (related function is written at the bottom)
   }
@@ -32,9 +34,9 @@ void fallingRect() {
   if (firstCol_Y.size() > 0) {
 
     //if the y of the rect is bigger than the yellow zone, delete the rectangle and print miss
-    if (firstCol_Y.get(0) > baseHeight*0.9 + baseHeight/20) {    
+    if (firstCol_Y.get(0) > baseHeight*0.9 + baseHeight/20) {
+      miss();
       firstCol_Y.remove(0);
-      println("1st: miss");
     }
   }
 
@@ -46,14 +48,15 @@ void fallingRect() {
 
       //if button is 1 (= if mouse is clicked inside the LEFT button)
       if (button == 1) {
-        println("1st: success");      //show "SUCCESS"
+        success();
         firstCol_Y.remove(0);    //delete the rectangle
       }
     }
   }
 
-  //for loop that draws the rectangle and moves it down by "speed" for the 2nd column
+  //for loop that draws the rectangle and moves it down by "speed" for the 2nd column (the code inside is the same as the 1st one but it's a 2nd column array)
   for (int i = 0; i < secondCol_Y.size(); i ++) {
+    fill(153, 191, 112, 191);    //green with 75% transparency
     rect(secondCol_X, secondCol_Y.get(i), lineGap, baseHeight/30);
     secondCol_Y.set(i, secondCol_Y.get(i) + speed);
   }
@@ -63,8 +66,8 @@ void fallingRect() {
 
     //if the y of the rect is bigger than the yellow zone, delete the rectangle and print miss
     if (secondCol_Y.get(0) > baseHeight*0.9 + baseHeight/20) {    
+      miss();
       secondCol_Y.remove(0);
-      println("2nd: miss");
     }
   }
 
@@ -76,25 +79,26 @@ void fallingRect() {
 
       //if button is 2 (= if mouse is clicked inside the CENTRE button)
       if (button == 2) {
-        println("2nd: success");      //show "SUCCESS"
+        success();
         secondCol_Y.remove(0);    //delete the rectangle
       }
     }
   }
 
-  //for loop that draws the rectangle and moves it down by "speed" for the 3rd column
+  //for loop that draws the rectangle and moves it down by "speed" for the 3rd column (the code inside is the same as the 1st one but it's a 3rd column array)
   for (int i = 0; i < thirdCol_Y.size(); i ++) {
+    fill(120, 150, 188, 191);    //blue with 75% transparency
     rect(thirdCol_X, thirdCol_Y.get(i), lineGap, baseHeight/30);
     thirdCol_Y.set(i, thirdCol_Y.get(i) + speed);
   }
-  
+
   //if there is a rectangle in the column
   if (thirdCol_Y.size() > 0) {
 
     //if the y of the rect is bigger than the yellow zone, delete the rectangle and print miss
-    if (thirdCol_Y.get(0) > baseHeight*0.9 + baseHeight/20) {    
+    if (thirdCol_Y.get(0) > baseHeight*0.9 + baseHeight/20) {   
+      miss();
       thirdCol_Y.remove(0);
-      println("3rd: miss");
     }
   }
 
@@ -106,7 +110,7 @@ void fallingRect() {
 
       //if button is 3 (= if mouse is clicked inside the RIGHT button)
       if (button == 3) {
-        println("3rd: success");      //show "SUCCESS"
+        success();
         thirdCol_Y.remove(0);    //delete the rectangle
       }
     }
