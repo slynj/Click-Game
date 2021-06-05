@@ -26,22 +26,26 @@ void fallingRect() {
   for (int i = 0; i < firstCol_Y.size(); i ++) {    //repeats it by the size of the firstCol_Y
     rect(firstCol_X, firstCol_Y.get(i), lineGap, baseHeight/30);  //draws the rectangle of first column's element
     firstCol_Y.set(i, firstCol_Y.get(i) + speed);  //y of the rect is now original y + speed (related function is written at the bottom)
-
-    if (firstCol_Y.get(i) > baseHeight*0.9 + baseHeight/20) {    //if the y of the rect is bigger than the yellow zone, delete the rectangle
-      firstCol_Y.remove(i);
-    }
-    
-    if (firstCol_Y.get(i) >= baseHeight*0.9 - 1 && firstCol_Y.get(i) <= baseHeight*0.9 + baseHeight/20 + 1) {  
+  }
+  
+  if (firstCol_Y.size() > 0) {
+  
+   if (firstCol_Y.get(0) > baseHeight*0.9 + baseHeight/20) {    //if the y of the rect is bigger than the yellow zone, delete the rectangle
+       firstCol_Y.remove(0);
+       println("miss");
+   }
+  }
+   
+   if (firstCol_Y.size() > 0) {
+  
+    if (firstCol_Y.get(0) >= baseHeight*0.9 - 1 && firstCol_Y.get(0) <= baseHeight*0.9 + baseHeight/20 + 1) {  
       if (button == 1) {
         //text("success", width/2, height/2);
         println("success");
-        firstCol_Y.remove(i);
-      } else {
-        //text("miss", width/2, height/2);
-        println("miss");
-        firstCol_Y.remove(i);
+        firstCol_Y.remove(0);
+      } 
       }
-    } 
+     }
     
     //switch(button){
       
@@ -49,7 +53,7 @@ void fallingRect() {
     //if (firstCol_Y.get(i) > baseHeight - baseHeight/30){
     //  firstCol_Y.remove(i);
     //}
-  }
+
 
   //for loop that draws the rectangle and moves it down by "speed" for the 2nd column
   for (int i = 0; i < secondCol_Y.size(); i ++) {
