@@ -35,8 +35,8 @@ void fallingRect() {
 
     //if the y of the rect is bigger than the yellow zone, delete the rectangle and print miss
     if (firstCol_Y.get(0) > baseHeight*0.9 + baseHeight/20) {
-      miss();
-      firstCol_Y.remove(0);
+      miss();    //set the miss boolean to true, success boolean to false, and reset count (functions are in the successOrMiss tab)
+      firstCol_Y.remove(0);    //delete the rect
     }
   }
 
@@ -48,7 +48,7 @@ void fallingRect() {
 
       //if button is 1 (= if mouse is clicked inside the LEFT button)
       if (button == 1) {
-        success();
+        success();    //set the miss boolean to false, success boolean to true, and reset count (functions are in the successOrMiss tab)
         firstCol_Y.remove(0);    //delete the rectangle
       }
     }
@@ -66,8 +66,8 @@ void fallingRect() {
 
     //if the y of the rect is bigger than the yellow zone, delete the rectangle and print miss
     if (secondCol_Y.get(0) > baseHeight*0.9 + baseHeight/20) {    
-      miss();
-      secondCol_Y.remove(0);
+      miss();  //set the miss boolean to true, success boolean to false, and reset count (functions are in the successOrMiss tab)
+      secondCol_Y.remove(0);  //delete rect
     }
   }
 
@@ -79,7 +79,7 @@ void fallingRect() {
 
       //if button is 2 (= if mouse is clicked inside the CENTRE button)
       if (button == 2) {
-        success();
+        success();    //set the miss boolean to false, success boolean to true, and reset count (functions are in the successOrMiss tab)
         secondCol_Y.remove(0);    //delete the rectangle
       }
     }
@@ -97,8 +97,8 @@ void fallingRect() {
 
     //if the y of the rect is bigger than the yellow zone, delete the rectangle and print miss
     if (thirdCol_Y.get(0) > baseHeight*0.9 + baseHeight/20) {   
-      miss();
-      thirdCol_Y.remove(0);
+      miss();    //set the miss boolean to true, success boolean to false, and reset count (functions are in the successOrMiss tab)
+      thirdCol_Y.remove(0); //delete the rect
     }
   }
 
@@ -110,7 +110,7 @@ void fallingRect() {
 
       //if button is 3 (= if mouse is clicked inside the RIGHT button)
       if (button == 3) {
-        success();
+        success();    //set the miss boolean to false, success boolean to true, and reset count (functions are in the successOrMiss tab)
         thirdCol_Y.remove(0);    //delete the rectangle
       }
     }
