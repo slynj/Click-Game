@@ -1,11 +1,13 @@
-int life = 20;
+int life = 15;    //original life
+PImage photo;     //image
 
 void drawLife() {
-  float rectX = width*0.55;
-  for (float i = 0; i < life; i++) {
-    fill(#F5C84D, 191);
-    stroke(255);
-    rect (rectX, height/6, width/32, height/32);
-    rectX += width*0.55;
+  float hartX = width;
+  
+  //draw "life" number of hart images
+  for (int i = 0; i < life; i++) {
+    tint(0);    //changes the hart to black(the image was originally red & white)  
+    image(photo, hartX, 0, width/32, width/32);    //draw the image
+    hartX -= width/32;        //move the image to the left
   }
 }

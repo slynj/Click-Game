@@ -17,7 +17,8 @@ int speed = 1;             //speed of the rectangle falling (starts at 1)
 //rectangle falling randomly 
 void fallingRect() {
   loop++;   // loop increases by 1 every draw loop
-
+  noStroke();  //no stroke drawn
+  
   //variable assigning
   firstCol_X = baseX;
   secondCol_X = firstCol_X + lineGap;

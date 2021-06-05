@@ -17,18 +17,16 @@
  ...
  
  --------------------------------------------- 
-//*/
+ //*/
 
 String gameState;       //game state (game, main, help, end)
 boolean click = false;
 
-
-
 void setup() {
-  //initial screen setup
+  //initial setup
   size(1000, 700);
   background(100);
-  
+
   //variable assign
   baseX = (float) width/8;           //x coordinate is always 1/8 of the width
   baseY = 0;                         //y is always0 zero since the rectangle is touching the top
@@ -36,6 +34,7 @@ void setup() {
   baseHeight = height*0.75;          //height of the base rect is always 75% of the height 
   lineGap = baseWidth/3;             //gap between the lines that divides the base in 3 parts
   gameState = "run";                 //initial game state
+  photo = loadImage("hart.png");
 }
 
 
@@ -60,10 +59,3 @@ void mousePressed() {
 void mouseReleased() {
   click = false;
 }
-
-
-
-
-
-
-  
