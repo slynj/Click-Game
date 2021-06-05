@@ -25,7 +25,7 @@ boolean click = false;
 void setup() {
   //initial setup
   size(1000, 700);
-  background(100);
+  
 
   //variable assign
   baseX = (float) width/8;           //x coordinate is always 1/8 of the width
@@ -43,6 +43,7 @@ void draw() {
     mainScreen();
   }
   if (gameState == "game") {
+    background(100);
     drawRect();
     drawBase();
     drawButton();
