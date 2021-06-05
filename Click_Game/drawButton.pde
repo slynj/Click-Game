@@ -21,27 +21,33 @@ void drawButton() {
   rect(buttonRX, buttonY, buttonSide, buttonSide, 20);
 
   //hover toggle (colour)
-  if (mouseY >= buttonY && mouseY <= buttonY + buttonSide) {          //when mouse is within the "y" value buttons are placed in
-    if (mouseX >= buttonLX && mouseX <= buttonLX + buttonSide) {      //if mouse X is in left button
-      fill(255, 0, 0);                                                //change colour to red
+  //when mouse is within the "y" value that all 3 buttons are placed in
+  if (mouseY >= buttonY && mouseY <= buttonY + buttonSide) {  
+    //if mouse X is in left button
+    if (mouseX >= buttonLX && mouseX <= buttonLX + buttonSide) {      
+      fill(203, 97, 97);                                              //change colour to red
       rect(buttonLX, buttonY, buttonSide, buttonSide, 20);            //over draw the button (rect)
       if (click == true) {        //if mouse pressed;
         button = 1;               //button is 1 (used to connect collision detection with the button click)
-      } else {button = 0;}
+      } else {button = 0;}        //when it is released, the click is false which means the button is 0
     }
-    if (mouseX >= buttonCX && mouseX <= buttonCX + buttonSide) {     //centre button
-      fill(0, 255, 0);                                               //green
+    
+    //centre button
+    if (mouseX >= buttonCX && mouseX <= buttonCX + buttonSide) {     
+      fill(153, 191, 112);                                            //green
       rect(buttonCX, buttonY, buttonSide, buttonSide, 20);
-      if (click == true) {
+      if (click == true) {        //if mouse pressed;
         button = 2;               //2
-      } else {button = 0;}
+      } else {button = 0;}        //false -> 0
     }
-    if (mouseX >= buttonRX && mouseX <= buttonRX + buttonSide) {     //right button
-      fill(0, 0, 255);                                               //blue
+    
+    //right button
+    if (mouseX >= buttonRX && mouseX <= buttonRX + buttonSide) {     
+      fill(120, 150, 188);                                               //blue
       rect(buttonRX, buttonY, buttonSide, buttonSide, 20);
-      if (click == true) {
+      if (click == true) {       //if mouse pressed;
         button = 3;              //3
-      } else {button = 0;}
+      } else {button = 0;}       //false -> 0
     }
   }
 }
