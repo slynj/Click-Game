@@ -29,25 +29,31 @@ void drawButton() {
       rect(buttonLX, buttonY, buttonSide, buttonSide, 20);            //over draw the button (rect)
       if (click == true) {        //if mouse pressed;
         button = 1;               //button is 1 (used to connect collision detection with the button click)
-      } else {button = 0;}        //when it is released, the click is false which means the button is 0
+      } else {
+        button = 0;
+      }        //when it is released, the click is false which means the button is 0
     }
-    
+
     //centre button
     if (mouseX >= buttonCX && mouseX <= buttonCX + buttonSide) {     
       fill(153, 191, 112);                                            //green
       rect(buttonCX, buttonY, buttonSide, buttonSide, 20);
       if (click == true) {        //if mouse pressed;
         button = 2;               //2
-      } else {button = 0;}        //false -> 0
+      } else {
+        button = 0;
+      }        //false -> 0
     }
-    
+
     //right button
     if (mouseX >= buttonRX && mouseX <= buttonRX + buttonSide) {     
       fill(120, 150, 188);                                               //blue
       rect(buttonRX, buttonY, buttonSide, buttonSide, 20);
       if (click == true) {       //if mouse pressed;
         button = 3;              //3
-      } else {button = 0;}       //false -> 0
+      } else {
+        button = 0;
+      }       //false -> 0
     }
   }
 }

@@ -43,16 +43,7 @@ void draw() {
     mainScreen();
   }
   if (gameState == "game") {
-    background(100);
-    drawRect();
-    drawBase();
-    drawButton();
-    drawZone();
-    drawLife();
-    speedControl();
-    fallingRect();
-    successOrMiss();
-    drawScore();
+    gameScreen();
   }
 }
 
