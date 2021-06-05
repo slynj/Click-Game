@@ -33,13 +33,16 @@ void setup() {
   baseWidth = width/2 - width/8;     //width of the base rect is half of width minus width/8 (gap on the left)
   baseHeight = height*0.75;          //height of the base rect is always 75% of the height 
   lineGap = baseWidth/3;             //gap between the lines that divides the base in 3 parts
-  gameState = "run";                 //initial game state
+  gameState = "main";                //initial game state
   photo = loadImage("hart.png");
 }
 
 
 void draw() {
-  if (gameState == "run") {
+  if (gameState == "main") {
+    mainScreen();
+  }
+  if (gameState == "game") {
     drawRect();
     drawBase();
     drawButton();
@@ -48,7 +51,7 @@ void draw() {
     speedControl();
     fallingRect();
     successOrMiss();
-    //speedTimer();
+    drawScore();
   }
 }
 

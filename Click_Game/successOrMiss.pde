@@ -6,7 +6,7 @@ int count = 0;      //counts the frame rate (resetted every time the rect is suc
 void drawRect() {
   fill(100);
   noStroke();
-  rect(width/2, height/3, width/2, height/3);
+  rect(width/2, height/3, width/2, height);
 }
 
 //if the player sucessfully click the button,
@@ -14,6 +14,7 @@ void success() {
   miss = false;      //miss is false
   success = true;    //success is true
   count = 0;         //framerate count is resetted
+  score += 10;       //increases the score by 10
 }
 
 //same as above but when it is missed
@@ -21,6 +22,7 @@ void miss() {
   success = false;
   miss = true;
   count = 0;
+  life -= 1;    //decrease the life by 1 (drawLife now draws 1 less harts)
 }
 
 void successOrMiss() {
