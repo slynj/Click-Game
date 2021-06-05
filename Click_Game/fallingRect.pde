@@ -47,13 +47,6 @@ void fallingRect() {
       }
      }
     
-    //switch(button){
-      
-    //}
-    //if (firstCol_Y.get(i) > baseHeight - baseHeight/30){
-    //  firstCol_Y.remove(i);
-    //}
-
 
   //for loop that draws the rectangle and moves it down by "speed" for the 2nd column
   for (int i = 0; i < secondCol_Y.size(); i ++) {
