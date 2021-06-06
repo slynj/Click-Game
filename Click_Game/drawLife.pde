@@ -9,7 +9,7 @@ void drawLife() {
     //println(playerLife);
     playerLife = life;   //updated value of playerLife
     tint(0);    //changes the hart to black(the image was originally red & white)  
-    image(photo, hartX, 0, width/32, width/32);    //draw the image
+    image(hart, hartX, 0, width/32, width/32);    //draw the image
     hartX -= width/32;        //move the image to the left
   }
   

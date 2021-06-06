@@ -21,7 +21,8 @@
 
 String gameState;       //game state (game, main, help, end)
 boolean click = false;
-PImage photo;     //image
+PImage hart;     //image
+PImage help;     //image
 
 void setup() {
   //initial setup
@@ -34,13 +35,14 @@ void setup() {
   baseWidth = width/2 - width/8;     //width of the base rect is half of width minus width/8 (gap on the left)
   baseHeight = height*0.75;          //height of the base rect is always 75% of the height 
   lineGap = baseWidth/3;             //gap between the lines that divides the base in 3 parts
-  gameState = "help";                //initial game state
-  photo = loadImage("hart.png");     //life img
-  photo = loadImage("help.jpg");     //help img
+  gameState = "main";                //initial game state
+  hart = loadImage("hart.png");     //life img
+  help = loadImage("help.jpg");     //help img
 }
 
 
 void draw() {
+  //game states
   if (gameState == "main") {
     mainScreen();
   } else if (gameState == "game") {

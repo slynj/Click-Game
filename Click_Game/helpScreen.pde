@@ -8,7 +8,7 @@ void helpScreen() {
   rect(0, 0, width/2, height);
 
   //help img
-  image(photo, 0, height*0.14, width/2, width/2);    //draw the image
+  image(help, 0, height*0.14, width/2, width/2);    //draw the image
 
   //how to play title
   textSize(30);
