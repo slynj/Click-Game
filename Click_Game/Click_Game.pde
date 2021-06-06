@@ -48,6 +48,10 @@
       visualized using images to help players understand better
    5. end screen
       end screen with various values players might want to view again (score, time)
+   6. button hover
+      button hover feature added to make sure users can know it is a button
+   7. evolves over time
+      it gets harder as time passes — the speed of the rectangle falling increases every 10 secondss
  ...
  
  --------------------------------------------- 
