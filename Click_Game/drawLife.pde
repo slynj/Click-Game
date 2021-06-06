@@ -1,5 +1,4 @@
 int life = 15;    //original life that changes in the miss() function
-PImage photo;     //image
 
 void drawLife() {
   float hartX = width;
