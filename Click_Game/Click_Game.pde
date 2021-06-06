@@ -1,10 +1,10 @@
 /*
- Name:        Program Name
- Purpose:     Program Description
+ Name:        click click click!!! RHYTHM GAME
+ Purpose:     click click click!!! RHYTHM GAME is a click rhythm game where you can challenge yourself how fast your eyes and hands can move!
  
- Author:      Your Name
- Created:     XX-Dec-2020
- Updated:     XX-Dec-2020
+ Author:      LYN JEONG
+ Created:     02-Jun-2021
+ Updated:     05-Jun-2021
  
  Don't forget to use the reference when programming
  https://processing.org/reference/
