@@ -26,6 +26,7 @@ void playButton() {
   float playButtonHeight = height/8;
 
   //text of the button
+  textAlign(LEFT);
   fill(255, 191);   //beige
   textSize(50);
   text ("P L A Y", playButtonX*1.13, playButtonY*1.13);
@@ -62,6 +63,7 @@ void helpButton() {
 
   //text of the button
   fill(255, 191);   //beige
+  textAlign(LEFT);
   textSize(50);
   text ("H E L P", helpButtonX*1.07, helpButtonY*1.13);
 
