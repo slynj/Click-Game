@@ -1,5 +1,5 @@
 int life = 15;    //original life that changes in the miss() function
-
+//^^ This is bad form.  If you have global variables declare them in your intial program 
 void drawLife() {
   float hartX = width;
   int playerLife = life;  //created to have changed life value in the for loop
